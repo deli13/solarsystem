@@ -9,27 +9,28 @@ function wtfman($whatsupman){   //ёбаная функция которая д�
 	$man = "hello man what a fuck ";
 	return $man.$whatsupman." ".time();
 }
-global $hueta
+global $hueta;
 define("MYSQL_USERS", "root"); //константа
 $number= 18.5;
 $user = "<br /> упырь <br />";
 $array= array("Hello", "world", 5); //массив
 // echo $array[0];
 $named= <<<_END
-Этот мудак 
+вывод какой то дичи 
 /*echo $user;
 echo "Hello  world!"; <br />
 echo \$user;
 echo \$number;*/
 ?>
-Выводит какое то гавно 
+Выводит какую то хрень 
 _END;
 // ^ввод документа
 echo "<br />".wtfman(MYSQL_USERS). "<br />"; 
 //echo $named;
 echo $user;
-echo "вывод символа строки" . substr($named, 8 , 10);
-
+echo "вывод символа строки " . substr($named, 8 , 10)."<br />";
+$tm=5;
+echo $tm<5 ? "меньше 5":"Больше или равно 5" //условный оператор
 
 ?>
 </body>
