@@ -1,7 +1,5 @@
-main.php
-/assets/fonts
-/assets/javascript/babylon.min.js
-/assets/javascript/bootstrap.min.js
-/assets/javascript/npm.js
-/assets/stylesheets/bootstrap.min.css
-/assets/stylesheets/bootstrap-theme.min.css
+webdevelopment/
+.settings/
+.metadata/
+.project
+.buildpath
