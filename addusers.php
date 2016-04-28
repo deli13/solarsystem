@@ -5,11 +5,9 @@ function validinsert($valid){
 	$codevalid=stripcslashes($valid);
 	$codevalid=htmlentities($codevalid);
 	return $codevalid;
-
 }
 session_start();
 
-if ($connection->connection_error) die($connection->connection_error);
 if (($_POST['password']==$_POST['confirm_password']) && $_POST['password']!=Null){
 	if (isset($_POST['nameuser']) && (isset($_POST['login'])) && (isset($_POST['password']))){
 		$nameuser=validinsert($_POST['nameuser']);
