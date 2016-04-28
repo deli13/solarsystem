@@ -24,6 +24,11 @@
 	<input type="password" name="confirm_password" placeholder="Повторите пароль" class="form-control">
 	</div>
 	<input type="submit" value="Зарегестрироваться" class="btn btn-default">
+	<?php 
+	include_once 'addusers.php';
+	echo $_SESSION['msg'];
+	unset($_SESSION['msg']);
+	?>
 	</form>
 	</div>
 	</div>
