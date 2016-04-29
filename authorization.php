@@ -29,6 +29,12 @@ if (isset($_POST['login']) && isset($_POST['password'])){
 		$_SESSION['msg']="ошибка авторизации";
 		header("Location: index.php");
 	}
+
 	
+}
+
+if (isset($_POST['dropsession'])){
+	session_destroy();
+	header("Location: index.php");
 }
 ?>

@@ -8,7 +8,9 @@
     <body>
     <div class="row">
     <div class="container">
-    <p>Регистрация пользователей</p>
+    <h4>Регистрация пользователей<a href="index.php"><small> Вернуться на главную страницу</small></a></h4>
+    <?php include_once 'authorization.php';
+    if (!isset($_SESSION['iduser'])){?>
 	<form action="addusers.php" method="post">
 	<div class="form-group">
 	<label>Имя пользователя</label>
@@ -24,12 +26,13 @@
 	<input type="password" name="confirm_password" placeholder="Повторите пароль" class="form-control">
 	</div>
 	<input type="submit" value="Зарегестрироваться" class="btn btn-default">
+	</form>
+	<?php } else echo "Вы успешно зарегестрировались"; ?> 
 	<?php 
 	include_once 'addusers.php';
 	echo $_SESSION['msg'];
 	unset($_SESSION['msg']);
 	?>
-	</form>
 	</div>
 	</div>
     </body>
