@@ -1,18 +1,17 @@
 <?php
 require_once 'dbconnect.php';
 
-function validinsert($valid){
-	$codevalid=stripcslashes($valid);
-	$codevalid=htmlentities($codevalid);
-	return $codevalid;
-}
-session_start();
 
+if (!isset($_SESSION)) session_start();
+  
+if (isset($_POST['nameuser']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['login'])){
+$nameuser=valid_insert($_POST['nameuser']);
+$login=valid_insert($_POST['login']);
+$password=valid_insert($_POST['password']);
+$confpass=valid_insert($_POST['confirm_password']);
 if (($_POST['password']==$_POST['confirm_password']) && $_POST['password']!=Null){
 	if (isset($_POST['nameuser']) && (isset($_POST['login'])) && (isset($_POST['password']))){
-		$nameuser=validinsert($_POST['nameuser']);
-		$login=validinsert($_POST['login']);
-		$password=validinsert($_POST['password']);
+
 		$query="insert into users set nameuser='".$nameuser."', u_password='".$password."', login='".$login."'";
 		$result=$connection->query($query);
 			if (!$result) $_SESSION['msg']="Проблема в подключение обратитесь к администратору ресурса";
@@ -28,5 +27,5 @@ header("Location: registration.php");
 unset($_POST['password']);
 header("Location: registration.php");
 }
-
+}
 ?>

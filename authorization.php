@@ -1,16 +1,12 @@
 <?php
 require_once 'dbconnect.php';
-session_start();
+if (!isset($_SESSION)) session_start();
 
-function validinsert($valid){
-	$codevalid=stripcslashes($valid);
-	$codevalid=htmlentities($codevalid);
-	return $codevalid;
-}
+
 
 if (isset($_POST['login']) && isset($_POST['password'])){
-	$login=validinsert($_POST['login']);
-	$password=validinsert($_POST['password']);
+	$login=valid_insert($_POST['login']);
+	$password=valid_insert($_POST['password']);
 	$query="select id_users, login from users where login='".$login."' and u_password='".$password."'";
 	$result=$connection->query($query);
 	$rows=$result->num_rows;

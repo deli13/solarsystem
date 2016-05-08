@@ -5,14 +5,7 @@ var createScene = function() {  //инициализация сцены
 var scene = new BABYLON.Scene(engine);
 scene.clearColor= new BABYLON.Color3.Black();
 
-var skybox = BABYLON.Mesh.CreateBox("skyBox", 2000.0, scene);
-var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
-skyboxMaterial.backFaceCulling = false;
-skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("/assets/image/textureGL/SkyBox/skybox", scene);
-skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
-skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
-skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-skybox.material = skyboxMaterial;
+
 
 
 var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(250,0,250), scene);   // создание камеры
@@ -55,12 +48,22 @@ var sun = new BABYLON.VolumetricLightScatteringPostProcess('godrays', 1.0, camer
 
 	// By default it uses a billboard to render the sun, just apply the desired texture
 	// position and scale
-	sun.mesh.material.diffuseTexture = new BABYLON.Texture('/assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);
+	//sun.mesh.material.diffuseTexture = new BABYLON.Texture('/assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);
+	sun.mesh.material.diffuseTexture = new BABYLON.Texture('/solarsystem/assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);	
 	sun.mesh.material.diffuseTexture.hasAlpha = true;
 	sun.mesh.position = new BABYLON.Vector3(1, 1, 1);
 	sun.mesh.scaling = new BABYLON.Vector3(109, 109, 109);
 
 	light.position = sun.mesh.position;
+
+	var skybox = BABYLON.Mesh.CreateBox("skyBox", 2000.0, scene);
+var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+skyboxMaterial.backFaceCulling = false;
+skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("/solarsystem/assets/image/textureGL/SkyBox/skybox", scene);
+skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+skybox.material = skyboxMaterial;
 
 var merkury = new BABYLON.Mesh.CreateSphere("sphere2", 10, 0.38, scene );
 
