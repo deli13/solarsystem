@@ -5,7 +5,7 @@ $dbhost='localhost';
 //$dbpass='qwe!@#RTY456';
  $dbname='solarsystem';
  $dbuser='root';
- $dbpass='1234';
+ $dbpass='123';
 $connection=new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 function valid_insert($validtext){

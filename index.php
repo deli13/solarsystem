@@ -12,7 +12,7 @@
 <div class="row">
 <div class=col-md-8>
 	<canvas id="renderCanvas"></canvas>
-	<script src="assets/javascript/solarsystem.js"></script>
+	<script async src="assets/javascript/solarsystem.js"></script>
 </div>
 <div class=col-md-4>
 <form action="authorization.php" method="post">
