@@ -94,13 +94,30 @@ jupiterMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/pl
 jupiter.material=jupiterMaterial;
 
 
+
+
 var saturn = new BABYLON.Mesh.CreateSphere("sphere7", 10, 9, scene);
 var saturnMaterial = new BABYLON.StandardMaterial("saturnmaterial", scene);
 saturnMaterial.diffuseTexture = new  BABYLON.Texture("/assets/image/textureGL/planet/saturn.jpg", scene);
 saturn.material=saturnMaterial;
-var saturncircle1 = new BABYLON.Mesh.CreateTorus("torus", 20, 0.2, 20, scene);
-var saturncircle2 = new BABYLON.Mesh.CreateTorus("torus2", 15, 0.2, 20, scene);
-var saturncircle3 = new BABYLON.Mesh.CreateTorus("torus3", 18, 0.2, 20, scene);
+// var saturncircle1 = new BABYLON.Mesh.CreateTorus("torus", 20, 0.2, 20, scene);
+// var saturncircle2 = new BABYLON.Mesh.CreateTorus("torus2", 15, 0.2, 20, scene);
+// var saturncircle3 = new BABYLON.Mesh.CreateTorus("torus3", 18, 0.2, 20, scene);
+// var saturncircleMaterial = new BABYLON.StandardMaterial("saturncircle", scene);
+// saturncircleMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/saturncircle.jpg", scene);
+// saturncircle1.material=saturncircleMaterial;
+// saturncircle2.material=saturncircleMaterial;
+// saturncircle3.material=saturncircleMaterial;
+var saturncircle = new BABYLON.Mesh.CreatePlane("circle", 20, scene);
+var saturncircleMaterial = new BABYLON.StandardMaterial("ringsmat", scene);
+saturncircleMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/rings.png", scene);
+saturncircleMaterial.diffuseTexture.hasAlpha=true;
+saturncircleMaterial.backFaceCulling=false;
+saturncircle.material=saturncircleMaterial;
+saturncircle.rotation.x=1.9;
+saturncircle.rotation.z=-1.9;
+
+
 
 
 var uran = new BABYLON.Mesh.CreateSphere("sphere8", 10, 3.9, scene);
@@ -123,6 +140,15 @@ var aljupiter=0;
 var alsaturn=0;
 var aluran=0;
 var alneptun=0;
+
+saturn.position.x=190;
+saturn.position.z=190;
+// saturncircle1.position.x=190;
+// saturncircle1.position.z=190;
+// saturncircle2.position.x=190;
+// saturncircle2.position.z=190;
+// saturncircle3.position.x=190;
+// saturncircle3.position.z=190;
 
 
 scene.registerBeforeRender (function(){
@@ -152,16 +178,16 @@ scene.registerBeforeRender (function(){
 	aljupiter += 0.006;
 	jupiter.rotation.y +=0.01;
 
-	saturn.position.x=190*Math.sin(alsaturn);
+	 saturn.position.x=190*Math.sin(alsaturn);
 	saturn.position.z=190*Math.cos(alsaturn);
-	alsaturn+=0.005;
-	saturn.rotation.y +=0.01;
-	saturncircle1.position.x=saturn.position.x;   //позиция колец сатурна
-	saturncircle1.position.z=saturn.position.z;
-	saturncircle2.position.x=saturn.position.x;
-	saturncircle2.position.z=saturn.position.z;
-	saturncircle3.position.x=saturn.position.x;
-	saturncircle3.position.z=saturn.position.z;
+	 alsaturn+=0.005;
+	 saturn.rotation.y +=0.01;
+	 saturncircle.position.x=saturn.position.x;   //позиция колец сатурна
+	 saturncircle.position.z=saturn.position.z;
+	// saturncircle2.position.x=saturn.position.x;
+	// saturncircle2.position.z=saturn.position.z;
+	// saturncircle3.position.x=saturn.position.x;
+	// saturncircle3.position.z=saturn.position.z;
 
 	uran.position.x=210*Math.sin(aluran);
 	uran.position.z=210*Math.cos(aluran);
@@ -198,3 +224,29 @@ engine.runRenderLoop(function(){
 window.addEventListener("resize", function (){  //масштабирование сцены
     engine.resize();
   })
+
+
+// var particlesystem= new BABYLON.ParticleSystem('particle', 2000, scene); //частицы для кольца сатурна
+// particlesystem.ParticleTexture= new BABYLON.Texture("/assets/image/textureGL/planet/saturncircle.jpg", scene);
+// particlesystem.emitter=saturncircle1;
+// particlesystem.minEmitBox = new BABYLON.Vector3(190, 0, 190);
+// particlesystem.maxEmitBox = new BABYLON.Vector3(200, 0, 200);
+//     particlesystem.color1 = new BABYLON.Color4(1, 0.5, 0, 1.0);
+//     particlesystem.color2 = new BABYLON.Color4(1, 0.5, 0, 1.0);
+//     particlesystem.colorDead = new BABYLON.Color4(0, 0, 0, 0.0);
+// particlesystem.minSize=0.1;
+// particlesystem.maxSize=0.3;
+// particlesystem.minLifeTime=0.2;
+// particlesystem.maxLifeTime=0.4;
+// particlesystem.emitRate=600;
+// particlesystem.blendMode= BABYLON.ParticleSystem.BLENDMODE_ONEONE;
+// // particlemode.gravity= new BABYLON.Vector3(0,0,0);
+// particlesystem.direction1 = new BABYLON.Vector3(0,4,0);
+// particlesystem.direction2 = new BABYLON.Vector3(0,4,0);
+// particlesystem.minAngularSpeed = 0;
+// particlesystem.maxAngualrSpeed = Math.PI;
+// particlesystem.minEmitPower=1;
+// particlesystem.maxEmitPower=5;
+// particlesystem.updateSpeed=0.01;
+
+// particlesystem.start();
