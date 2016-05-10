@@ -4,6 +4,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
  	<script src="assets/javascript/babylon.min.js"></script>
  	<script src="assets/javascript/bootstrap.min.js"></script>
+
  	<link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
   	<link rel="stylesheet" href="assets/stylesheets/style.css">
 	<meta charset="utf-8">
@@ -11,6 +12,8 @@
 <body>
 <div class="row">
 <div class=col-md-8>
+<input type="button" id="arcrotate" class="btn" value="ArcRotateCamera">
+<input type="button" id="freecam" class="btn" value="FreeCamera">
 	<canvas id="renderCanvas"></canvas>
 	<script async src="assets/javascript/solarsystem.js"></script>
 </div>
@@ -29,7 +32,7 @@ if (isset($_SESSION['iduser'])){
 	</div>
 	<div class="form-group">
 		<label>Пароль</label>
-		<input name="password" class="form-control"><br />
+		<input name="password" type="password" class="form-control"><br />
 	</div>
 		<input type="submit" class="btn btn-default" value="Войти">
 		<a class="btn btn-info" href="registration.php" role="button">Зарегестрироваться</a>

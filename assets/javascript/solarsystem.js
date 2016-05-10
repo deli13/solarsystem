@@ -1,5 +1,7 @@
 var canvas = document.querySelector("#renderCanvas"); //определяем с каким элементом canvas работаем
 var engine = new BABYLON.Engine(canvas, true); // привязываем canvas к BABYLON
+var butarccamera = document.getElementById("arcrotate");
+var butfreecamera = document.getElementById("freecam");
 var createScene = function() {  //инициализация сцены
 
 var scene = new BABYLON.Scene(engine);
@@ -9,6 +11,21 @@ scene.clearColor= new BABYLON.Color3.Black();
 var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(250,0,250), scene);   // создание камеры
 camera.setTarget(BABYLON.Vector3.Zero());
 camera.attachControl(canvas, false);
+
+var arccamera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 250, 0, 250, new BABYLON.Vector3.Zero(), scene);
+arccamera.setPosition(new BABYLON.Vector3(250, 0, 250));
+arccamera.attachControl(canvas, true);
+
+butarccamera.addEventListener("click", function(){
+	scene.activeCamera=arccamera;
+	console.log("ArcRotateCamera");
+})
+butfreecamera.addEventListener("click", function(){
+	scene.activeCamera=camera;
+	console.log("FreeCamera");
+})
+
+
 
 var lightback = new BABYLON.DirectionalLight("light2", new BABYLON.Vector3(200,0,200), scene); //создание освещения
 var lightfront = new BABYLON.DirectionalLight("light2", new BABYLON.Vector3(-200,0,-200), scene); //создание освещения
