@@ -4,7 +4,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
  	<script src="assets/javascript/babylon.min.js"></script>
  	<script src="assets/javascript/bootstrap.min.js"></script>
-
  	<link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
   	<link rel="stylesheet" href="assets/stylesheets/style.css">
 	<meta charset="utf-8">
@@ -14,6 +13,7 @@
 <div class=col-md-8>
 <input type="button" id="arcrotate" class="btn" value="ArcRotateCamera">
 <input type="button" id="freecam" class="btn" value="FreeCamera">
+<input type="button" id="btnFullScreen" class="btn" value="Full Screen">
 	<canvas id="renderCanvas"></canvas>
 	<script async src="assets/javascript/solarsystem.js"></script>
 </div>

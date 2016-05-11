@@ -2,6 +2,17 @@ var canvas = document.querySelector("#renderCanvas"); //определяем с 
 var engine = new BABYLON.Engine(canvas, true); // привязываем canvas к BABYLON
 var butarccamera = document.getElementById("arcrotate");
 var butfreecamera = document.getElementById("freecam");
+var FullScreen= document.getElementById("btnFullScreen");
+
+FullScreen.addEventListener('click', function(){
+	canvas.width=window.screen.width;
+	canvas.height=window.screen.height;
+	if (canvas.requestFullscreen){canvas.requestFullscreen()}
+	else if (canvas.mozRequestFullScreen) {canvas.mozRequestFullScreen()}
+	else if (canvas.msRequestFullscreen) {canvas.msRequestFullscreen()}
+	else if (canvas.webkitRequestFullScreen){canvas.webkitRequestFullScreen()}
+})
+
 var createScene = function() {  //инициализация сцены
 
 var scene = new BABYLON.Scene(engine);
@@ -80,26 +91,26 @@ skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
 skybox.material = skyboxMaterial;
 
-var merkury = new BABYLON.Mesh.CreateSphere("sphere2", 10, 0.38, scene );
+var merkury = new BABYLON.Mesh.CreateSphere("sphere2", 10, 5.38, scene );
 var merkuryMaterial = new BABYLON.StandardMaterial("merkuryMaterial", scene);
 merkuryMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/mercury.jpg", scene);
 merkury.material = merkuryMaterial;
 
 
-var venera = new BABYLON.Mesh.CreateSphere("sphere3", 10, 0.95, scene);
+var venera = new BABYLON.Mesh.CreateSphere("sphere3", 10, 5.95, scene);
 var veneraMaterial = new BABYLON.StandardMaterial("textureVenera", scene);
 veneraMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/venus.jpg", scene);
 venera.material = veneraMaterial;
 
 
-var earth = new BABYLON.Mesh.CreateSphere("sphere4", 10, 1, scene);
+var earth = new BABYLON.Mesh.CreateSphere("sphere4", 10, 6, scene);
 var earthMaterial = new BABYLON.StandardMaterial("textureearth", scene);
 earthMaterial.diffuseTexture=new BABYLON.Texture("/assets/image/textureGL/planet/earth.jpeg", scene);
 earth.material=earthMaterial;
 
 
 
-var mars = new BABYLON.Mesh.CreateSphere("sphere5", 10, 0.53, scene);
+var mars = new BABYLON.Mesh.CreateSphere("sphere5", 10, 5.53, scene);
 var marsMaterial = new BABYLON.StandardMaterial("texturemars", scene);
 marsMaterial.diffuseTexture=new BABYLON.Texture("/assets/image/textureGL/planet/mars.jpg", scene);
 mars.material=marsMaterial;
@@ -217,6 +228,8 @@ scene.registerBeforeRender (function(){
 	neptun.rotation.y+=0.001;
 
 });
+
+
 scene.collisionsEnabled=true;
 camera.checkCollisions=true;
 solar.checkCollisions=true;
@@ -241,29 +254,3 @@ engine.runRenderLoop(function(){
 window.addEventListener("resize", function (){  //масштабирование сцены
     engine.resize();
   })
-
-
-// var particlesystem= new BABYLON.ParticleSystem('particle', 2000, scene); //частицы для кольца сатурна
-// particlesystem.ParticleTexture= new BABYLON.Texture("/assets/image/textureGL/planet/saturncircle.jpg", scene);
-// particlesystem.emitter=saturncircle1;
-// particlesystem.minEmitBox = new BABYLON.Vector3(190, 0, 190);
-// particlesystem.maxEmitBox = new BABYLON.Vector3(200, 0, 200);
-//     particlesystem.color1 = new BABYLON.Color4(1, 0.5, 0, 1.0);
-//     particlesystem.color2 = new BABYLON.Color4(1, 0.5, 0, 1.0);
-//     particlesystem.colorDead = new BABYLON.Color4(0, 0, 0, 0.0);
-// particlesystem.minSize=0.1;
-// particlesystem.maxSize=0.3;
-// particlesystem.minLifeTime=0.2;
-// particlesystem.maxLifeTime=0.4;
-// particlesystem.emitRate=600;
-// particlesystem.blendMode= BABYLON.ParticleSystem.BLENDMODE_ONEONE;
-// // particlemode.gravity= new BABYLON.Vector3(0,0,0);
-// particlesystem.direction1 = new BABYLON.Vector3(0,4,0);
-// particlesystem.direction2 = new BABYLON.Vector3(0,4,0);
-// particlesystem.minAngularSpeed = 0;
-// particlesystem.maxAngualrSpeed = Math.PI;
-// particlesystem.minEmitPower=1;
-// particlesystem.maxEmitPower=5;
-// particlesystem.updateSpeed=0.01;
-
-// particlesystem.start();
