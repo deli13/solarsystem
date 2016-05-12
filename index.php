@@ -12,12 +12,12 @@
 <body>
 <div class="row">
 <div class=col-md-8>
+<input type="button" id="btnFullScreen" class="btn" value="Full Screen">
 <input type="button" id="arcrotate" class="btn" value="ArcRotateCamera">
 <input type="button" id="freecam" class="btn" value="FreeCamera">
-<input type="button" id="btnFullScreen" class="btn" value="Full Screen">
 	<canvas id="renderCanvas"></canvas>
 	<div id="scriptsrc">
-	<script async src="assets/javascript/merkury.js"></script>
+	<script async src="assets/javascript/solarsystem.js" ID="scripts"></script>
 	</div>
 </div>
 <div class=col-md-4>
