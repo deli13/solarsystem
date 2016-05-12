@@ -4,6 +4,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
  	<script src="assets/javascript/babylon.min.js"></script>
  	<script src="assets/javascript/bootstrap.min.js"></script>
+ 	<script async src="assets/javascript/main.js"></script>
  	<link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
   	<link rel="stylesheet" href="assets/stylesheets/style.css">
 	<meta charset="utf-8">
@@ -15,7 +16,9 @@
 <input type="button" id="freecam" class="btn" value="FreeCamera">
 <input type="button" id="btnFullScreen" class="btn" value="Full Screen">
 	<canvas id="renderCanvas"></canvas>
-	<script async src="assets/javascript/solarsystem.js"></script>
+	<div id="scriptsrc">
+	<script async src="assets/javascript/merkury.js"></script>
+	</div>
 </div>
 <div class=col-md-4>
 <form action="authorization.php" method="post">
@@ -39,6 +42,8 @@ if (isset($_SESSION['iduser'])){
 <?php if (isset($_SESSION['msg'])) echo $_SESSION['msg'];
 }?>
 </form>
+<input type="button" id="solarsys" class="btn btn-info" value="Солнечная система">
+<input type="button" id="merkury" class="btn btn-info" value="Меркурий">
 </div>
 </div>
 <div class="container">
