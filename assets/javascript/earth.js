@@ -31,21 +31,21 @@ arccamera.attachControl(canvas, true);
 	//sun.mesh.material.diffuseTexture = new BABYLON.Texture('/assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);
 	sun.mesh.material.diffuseTexture = new BABYLON.Texture('/assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);	
 	sun.mesh.material.diffuseTexture.hasAlpha = true;
-	sun.mesh.position = new BABYLON.Vector3(30, 30, 30);
+	sun.mesh.position = new BABYLON.Vector3(40, 0, 40);
 	sun.mesh.scaling = new BABYLON.Vector3(50, 50, 50);
  	light.position = sun.mesh.position;
 
-var venus = new BABYLON.Mesh.CreateSphere("sphere2", 15, 15, scene );
-var venusMaterial = new BABYLON.StandardMaterial("venusMaterial", scene);
-venusMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/venus.jpg", scene);
-venusMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
-venusMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
-venusMaterial.alpha = 0.6;
-venusMaterial.specularPower = 1;
-venus.material = venusMaterial;
+var earth = new BABYLON.Mesh.CreateSphere("sphere2", 15, 15, scene );
+var earthMaterial = new BABYLON.StandardMaterial("earthMaterial", scene);
+earthMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/earth.jpeg", scene);
+earthMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+earthMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+earthMaterial.alpha = 0.6;
+earthMaterial.specularPower = 1;
+earth.material = earthMaterial;
 
 scene.registerBeforeRender (function(){
-	venus.rotation.y +=0.01;
+	earth.rotation.y +=0.01;
 })
 
 

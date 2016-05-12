@@ -17,7 +17,7 @@
 <input type="button" id="freecam" class="btn" value="FreeCamera">
 	<canvas id="renderCanvas"></canvas>
 	<div id="scriptsrc">
-	<script async src="assets/javascript/solarsystem.js" ID="scripts"></script>
+	<script async src="assets/javascript/earth.js" ID="scripts"></script>
 	</div>
 </div>
 <div class=col-md-4>
@@ -44,6 +44,8 @@ if (isset($_SESSION['iduser'])){
 </form>
 <input type="button" id="solarsys" class="btn btn-info" value="Солнечная система">
 <input type="button" id="merkury" class="btn btn-info" value="Меркурий">
+<input type="button" id="venus" class="btn btn-info" value="Венера">
+<input type="button" id="earth" class="btn btn-info" value="Земляё">
 </div>
 </div>
 <div class="container">
