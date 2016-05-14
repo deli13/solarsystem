@@ -12,12 +12,15 @@
 <body>
 <div class="row">
 <div class=col-md-8>
+<canvas id="renderCanvas"></canvas>
+<div class ="btn-blend">
 <input type="button" id="btnFullScreen" class="btn" value="Full Screen">
 <input type="button" id="arcrotate" class="btn" value="ArcRotateCamera">
 <input type="button" id="freecam" class="btn" value="FreeCamera">
-	<canvas id="renderCanvas"></canvas>
+	</div>
+	
 	<div id="scriptsrc">
-	<script async src="assets/javascript/earth.js" ID="scripts"></script>
+	<script async src="assets/javascript/solarsystem.js" ID="scripts"></script>
 	</div>
 </div>
 <div class=col-md-4>
@@ -38,14 +41,19 @@ if (isset($_SESSION['iduser'])){
 		<input name="password" type="password" class="form-control"><br />
 	</div>
 		<input type="submit" class="btn btn-default" value="Войти">
-		<a class="btn btn-info" href="registration.php" role="button">Зарегестрироваться</a>
+		<a class="btn btn-info" href="registration.php" role="button" style="margin: 5px;">Зарегестрироваться</a>
 <?php if (isset($_SESSION['msg'])) echo $_SESSION['msg'];
 }?>
 </form>
-<input type="button" id="solarsys" class="btn btn-info" value="Солнечная система">
-<input type="button" id="merkury" class="btn btn-info" value="Меркурий">
-<input type="button" id="venus" class="btn btn-info" value="Венера">
-<input type="button" id="earth" class="btn btn-info" value="Земляё">
+<input type="button" id="solarsys" class="btn btn-info" value="Солнечная система"><br />
+<input type="button" id="merkury" class="btn btn-info" value="Меркурий"><br />
+<input type="button" id="venus" class="btn btn-info" value="Венера"><br />
+<input type="button" id="earth" class="btn btn-info" value="Земля"><br />
+<input type="button" id="mars" class="btn btn-info" value="Марс"><br />
+<input type="button" id="jupiter" class="btn btn-info" value="Юпитер"><br />
+<input type="button" id="saturn" class="btn btn-info" value="Сатурн"><br />
+<input type="button" id="uran" class="btn btn-info" value="Уран"><br />
+<input type="button" id="neptun" class="btn btn-info" value="Нептун">
 </div>
 </div>
 <div class="container">
