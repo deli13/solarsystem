@@ -92,12 +92,6 @@ for ($i=0; $i<$rows; ++$i){
 	<textarea name="comment" class="form-control"></textarea><br />
 	<input type="submit" class="btn btn-default" value="Добавить комментарий">
 </form>
-<script>
-function focus(){
-	document.getElementsByClassName('form-control').hidden=true;
-	document.getElementsByClassName('renderCanvas').hidden=false;
-}
-</script>
 <?php } else echo "<blockquote>Комментарии могут отправлять только зарегестрированные пользователи</blockquote>"?>
 </div>
 </div>
