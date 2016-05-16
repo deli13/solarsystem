@@ -12,15 +12,17 @@
 <body>
 <div class="row">
 <div class=col-md-8>
-<canvas id="renderCanvas"></canvas>
-<div class ="btn-blend">
-<input type="button" id="btnFullScreen" class="btn" value="Full Screen">
-<input type="button" id="arcrotate" class="btn" value="ArcRotateCamera">
-<input type="button" id="freecam" class="btn" value="FreeCamera">
+	<canvas id="renderCanvas"></canvas>
+	<div class ="btn-blend">
+		<input type="button" id="btnFullScreen" class="btn" value="Full Screen">
+		<input type="button" id="arcrotate" class="btn" value="ArcRotateCamera">
+		<input type="button" id="freecam" class="btn" value="FreeCamera">
 	</div>
 	
 	<div id="scriptsrc">
-	<script async src="assets/javascript/solarsystem.js" ID="scripts"></script>
+		<script async src="assets/javascript/solarsystem.js" ID="scripts"></script>
+	</div>
+	<div id="descript">
 	</div>
 </div>
 <div class=col-md-4>

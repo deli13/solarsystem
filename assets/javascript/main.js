@@ -11,6 +11,8 @@ var neptun = document.getElementById("neptun");
 var scriptsrc = "/assets/javascript/"
 var arcrot = document.getElementById("arcrotate");
 var freecam = document.getElementById("freecam");
+var divinfo = document.getElementById("descript");
+
 
 function addScript(src){
 divscript.removeChild(scripts);
@@ -21,11 +23,30 @@ divscript.appendChild(newscripts);
 return newscripts;
 }
 
+function planetInfo(src){
+	var xhr=new XMLHttpRequest();
+	var xhrsrc="planet.php?planet="+src;
+	console.log(xhrsrc);
+	xhr.open("GET", xhrsrc, "true");
+	xhr.send();
+	xhr.onreadystatechange = function(){
+		console.log(xhr.status)
+		if (xhr.readyState!=4) {
+		if (xhr.status!=200){
+			console.log(xhr.status);
+			} else {
+				divinfo.innerHTML=xhr.responseText;
+			}
+		}
+	}
+}
+
 solarsys.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("solarsystem.js");
 	arcrot.style.visibility = "visible";
 	freecam.style.visibility = "visible";
+	planetInfo('Солнечная система');
 })
 merkury.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
