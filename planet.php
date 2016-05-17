@@ -12,29 +12,17 @@ if ($ajax_query_planet!='') {
 		$row = $result->fetch_array(MYSQLI_ASSOC);
 		echo $row['description'];
 	}}}}
-//if (isset($_POST['nameplanet']) && isset($_POST['descr'])) {
-//$nameplanet = valid_insert($_POST["nameplanet"]);
-//$descr = valid_insert($_POST["descr"]);
-//$query = "insert into planet(name_planet, description) values('".$nameplanet."', '".$descr."')";
-//echo $query."<br />";
-//$result = $connection->query($query);
-//if (!$result) {
-//	//$_SESSION['msg_planet'] = "запись не добавлена";
-//	echo " error";
-//} else echo "Запись добавлена";//header("Location: addplanet.php");
-//}
-
-
 	
 if (isset($_POST['nameplanet']) && isset($_POST['descr'])){
 	$namep=valid_insert($_POST['nameplanet']);
 	$descr=valid_insert($_POST['descr']);
 	$query_sel="select name_planet from planet where name_planet='".$namep."'";
 	$result_sel=$connection->query($query_sel);
-	if (!$result_sel){ 
+	$rows=$result_sel->num_rows;
+	if ($rows<1){ 
 		$query_ins="insert into planet(name_planet, description) values('".$namep."', '".$descr."')";
 		$result_ins=$connection->query($query_ins);
-		if (!$result){
+		if (!$result_ins){
 			echo "Запись не добавлена";
 		} else {
 			echo "Запись добавлена";

@@ -4,10 +4,11 @@ var ssystem=document.getElementById("ssystem");
 var merkury=document.getElementById("merkury");
 var venus=document.getElementById("venus");
 var earth=document.getElementById("earth");
+var mars=document.getElementById("mars");
 var jupiter=document.getElementById("jupiter");
 var saturn=document.getElementById("saturn");
 var uran=document.getElementById("uran");
-var neptune=document.getElementById("neptune");
+var neptun=document.getElementById("neptun");
 var upd_planet=document.getElementById("add");
 var msg=document.getElementById("msg");
 
@@ -40,7 +41,6 @@ upd_planet.addEventListener('click', function(){
 	body=body.join(boundMiddle)+boundLast;
 	xhr_post.open("POST", "planet.php");
 	xhr_post.setRequestHeader('Content-Type', 'multipart/form-data; boundary='+bound);
-	alert(body);
 	xhr_post.send(body);
 	xhr_post.onreadystatechange=function(){
 		if (xhr_post.readyState!=4){
@@ -49,13 +49,46 @@ upd_planet.addEventListener('click', function(){
 			} 
 			else{
 				msg.innerHTML=xhr_post.responseText;
+				planetajax(nameplanet.value);
 			}
 		}
 	}
 	
+	
 })
 
 ssystem.addEventListener('click', function(){
-	var butname=ssystem.innerHTML;
-	planetajax(butname);
+	planetajax(ssystem.innerHTML);
+});
+
+merkury.addEventListener('click', function(){
+	planetajax(merkury.innerHTML);
+});
+
+venus.addEventListener('click', function(){
+	planetajax(venus.innerHTML);
+});
+
+earth.addEventListener('click', function(){
+	planetajax(earth.innerHTML);
+});
+
+mars.addEventListener('click', function(){
+	planetajax(mars.innerHTML);
+});
+
+jupiter.addEventListener('click', function(){
+	planetajax(jupiter.innerHTML);
+});
+
+saturn.addEventListener('click', function(){
+	planetajax(saturn.innerHTML);
+});
+
+uran.addEventListener('click', function(){
+	planetajax(uran.innerHTML);
+});
+
+neptun.addEventListener('click', function(){
+	planetajax(neptun.innerHTML);
 });
