@@ -29,7 +29,7 @@
 <form action="authorization.php" method="post">
 <?php require_once 'authorization.php'; 
 if (isset($_SESSION['iduser'])){
-	echo "<h3>Hello <small>".$_SESSION['msg']."</small></h3>";
+	echo "<h3>Hello <small>".$_SESSION['loginuser']."</small></h3>";
  ?>
 <input type="submit" name="dropsession" value="Выйти" class="btn btn-danger">
 <?php } else{?>

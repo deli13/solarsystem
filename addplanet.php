@@ -7,8 +7,12 @@
 		<link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
 	</head>
 <body>
+<?php session_start(); 
+if (isset($_SESSION['loginuser'])){
+	if ($_SESSION['loginuser']!='admin') header('Location: index.php');
+} else header('Location: index.php');?>
 <div class="container">
-<p class="lead">Добавление и изменение информации о планетах</p>
+<h3 class="lead">Добавление и изменение информации о планетах<a href="index.php"><small>Вернуться на главную</small></a></h3>
 
 <div class="input-group">
 	<div class="input-group-btn">

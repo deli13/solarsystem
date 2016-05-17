@@ -53,47 +53,54 @@ merkury.addEventListener('click', function(){
 	addScript("merkury.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
-	
+	planetInfo(merkury.value);
 })
 venus.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("venus.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
+	planetInfo(venus.value);
 })
 earth.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("earth.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
+	planetInfo(earth.value);
 })
 mars.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("mars.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
+	planetInfo(mars.value);
 })
 jupiter.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("jupiter.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
+	planetInfo(jupiter.value);
 })
 saturn.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("saturn.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
+	planetInfo(saturn.value);
 })
 uran.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("uran.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
+	planetInfo(uran.value);
 })
 neptun.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
 	addScript("neptun.js");
 	arcrot.style.visibility = "hidden";
 	freecam.style.visibility = "hidden";
+	planetInfo(neptun.value);
 })
