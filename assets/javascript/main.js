@@ -15,12 +15,12 @@ var divinfo = document.getElementById("descript");
 
 
 function addScript(src){
-divscript.removeChild(scripts);
-var newscripts = document.createElement("script");
-newscripts.src = scriptsrc+src;
-newscripts.id = "scripts";
-divscript.appendChild(newscripts);
-return newscripts;
+	divscript.removeChild(scripts);
+	var newscripts = document.createElement("script");
+	newscripts.src = scriptsrc+src;
+	newscripts.id = "scripts";
+	divscript.appendChild(newscripts);
+	return newscripts;
 }
 
 function planetInfo(src){
@@ -30,7 +30,7 @@ function planetInfo(src){
 	xhr.open("GET", xhrsrc, "true");
 	xhr.send();
 	xhr.onreadystatechange = function(){
-		console.log(xhr.status)
+		console.log(xhr.status);
 		if (xhr.readyState!=4) {
 		if (xhr.status!=200){
 			console.log(xhr.status);
@@ -46,7 +46,7 @@ solarsys.addEventListener('click', function(){
 	addScript("solarsystem.js");
 	arcrot.style.visibility = "visible";
 	freecam.style.visibility = "visible";
-	planetInfo('Солнечная система');
+	planetInfo(solarsys.value);
 })
 merkury.addEventListener('click', function(){
 	var scripts = document.getElementById("scripts");
