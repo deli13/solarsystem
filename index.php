@@ -22,7 +22,7 @@
 	<div id="scriptsrc">
 		<script async src="assets/javascript/solarsystem.js" ID="scripts"></script>
 	</div>
-	<div id="descript">
+	<div id="descript" class="trans">
 	</div>
 </div>
 <div class=col-md-4>
@@ -32,7 +32,8 @@ if (isset($_SESSION['iduser'])){
 	echo "<h3>Hello <small>".$_SESSION['loginuser']."</small></h3>";
  ?>
 <input type="submit" name="dropsession" value="Выйти" class="btn btn-danger">
-<?php } else{?>
+
+<?php if ($_SESSION['loginuser']=='admin') echo '<a href="addplanet.php" class="btn btn-info" role="button" style="margin: 5px;">Данные о планетах</a>'; } else{?>
 
 	<div class="form-group">
 		<label>Логин</label>
