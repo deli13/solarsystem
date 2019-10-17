@@ -37,7 +37,7 @@ arccamera.attachControl(canvas, true);
 
 var venus = new BABYLON.Mesh.CreateSphere("sphere2", 15, 15, scene );
 var venusMaterial = new BABYLON.StandardMaterial("venusMaterial", scene);
-venusMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/venus.jpg", scene);
+venusMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/venus.jpg", scene);
 venusMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 venusMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 venusMaterial.alpha = 0.6;

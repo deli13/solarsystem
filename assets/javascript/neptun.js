@@ -32,7 +32,7 @@ arccamera.attachControl(canvas, true);
 
 var neptun = new BABYLON.Mesh.CreateSphere("sphere2", 15, 15, scene );
 var neptunMaterial = new BABYLON.StandardMaterial("neptunMaterial", scene);
-neptunMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/neptune.jpg", scene);
+neptunMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/neptune.jpg", scene);
 neptunMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 neptunMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 neptunMaterial.alpha = 0.6;

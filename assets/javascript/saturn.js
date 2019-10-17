@@ -32,7 +32,7 @@ arccamera.attachControl(canvas, true);
 
 var saturn = new BABYLON.Mesh.CreateSphere("sphere2", 15, 18, scene );
 var saturnMaterial = new BABYLON.StandardMaterial("saturnMaterial", scene);
-saturnMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/saturn.jpg", scene);
+saturnMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/saturn.jpg", scene);
 saturnMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 saturnMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 saturnMaterial.alpha = 1;
@@ -41,7 +41,7 @@ saturn.material = saturnMaterial;
 
 var saturncircle = new BABYLON.Mesh.CreatePlane("circle", 35, scene);
 var saturncircleMaterial = new BABYLON.StandardMaterial("ringsmat", scene);
-saturncircleMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/rings.png", scene);
+saturncircleMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/rings.png", scene);
 saturncircleMaterial.diffuseTexture.hasAlpha=true;
 saturncircleMaterial.backFaceCulling=false;
 saturncircle.material=saturncircleMaterial;

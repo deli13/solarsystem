@@ -3,7 +3,7 @@ var engine = new BABYLON.Engine(canvas, true); // привязываем canvas 
 var butarccamera = document.getElementById("arcrotate");
 var butfreecamera = document.getElementById("freecam");
 var FullScreen= document.getElementById("btnFullScreen");
-var textursrc = "/assets/image/textureGL/";
+var textursrc = "assets/image/textureGL/";
 
 FullScreen.addEventListener('click', function(){
 	canvas.width=window.screen.width;

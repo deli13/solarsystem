@@ -29,7 +29,7 @@ arccamera.attachControl(canvas, true);
 
 	var sun = new BABYLON.VolumetricLightScatteringPostProcess('godrays', 1.0, arccamera, null, 100, BABYLON.Texture.BILINEAR_SAMPLINGMODE, engine, false);
 	//sun.mesh.material.diffuseTexture = new BABYLON.Texture('/assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);
-	sun.mesh.material.diffuseTexture = new BABYLON.Texture('/assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);	
+	sun.mesh.material.diffuseTexture = new BABYLON.Texture('assets/image/textureGL/sun.png', scene, true, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE);
 	sun.mesh.material.diffuseTexture.hasAlpha = true;
 	sun.mesh.position = new BABYLON.Vector3(40, 0, 40);
 	sun.mesh.scaling = new BABYLON.Vector3(50, 50, 50);
@@ -37,7 +37,7 @@ arccamera.attachControl(canvas, true);
 
 var earth = new BABYLON.Mesh.CreateSphere("sphere2", 15, 15, scene );
 var earthMaterial = new BABYLON.StandardMaterial("earthMaterial", scene);
-earthMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/earth.jpeg", scene);
+earthMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/earth.jpeg", scene);
 earthMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 earthMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 earthMaterial.alpha = 0.6;

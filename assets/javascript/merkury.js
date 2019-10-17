@@ -37,7 +37,7 @@ arccamera.attachControl(canvas, true);
 
 var merkury = new BABYLON.Mesh.CreateSphere("sphere2", 15, 10, scene );
 var merkuryMaterial = new BABYLON.StandardMaterial("merkuryMaterial", scene);
-merkuryMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/mercury.jpg", scene);
+merkuryMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/mercury.jpg", scene);
 merkuryMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 merkuryMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 merkuryMaterial.alpha = 0.6;

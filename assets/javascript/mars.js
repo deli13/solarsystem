@@ -37,7 +37,7 @@ arccamera.attachControl(canvas, true);
 
 var mars = new BABYLON.Mesh.CreateSphere("sphere2", 15, 10, scene );
 var marsMaterial = new BABYLON.StandardMaterial("marsMaterial", scene);
-marsMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/mars.jpg", scene);
+marsMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/mars.jpg", scene);
 marsMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 marsMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 marsMaterial.alpha = 0.6;

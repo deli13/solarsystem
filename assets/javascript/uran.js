@@ -32,7 +32,7 @@ arccamera.attachControl(canvas, true);
 
 var uran = new BABYLON.Mesh.CreateSphere("sphere2", 15, 17, scene );
 var uranMaterial = new BABYLON.StandardMaterial("uranMaterial", scene);
-uranMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/uranus.jpg", scene);
+uranMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/uranus.jpg", scene);
 uranMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 uranMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 uranMaterial.alpha = 0.6;

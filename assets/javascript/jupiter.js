@@ -32,7 +32,7 @@ arccamera.attachControl(canvas, true);
 
 var jupiter = new BABYLON.Mesh.CreateSphere("sphere2", 15, 20, scene );
 var jupiterMaterial = new BABYLON.StandardMaterial("jupiterMaterial", scene);
-jupiterMaterial.diffuseTexture = new BABYLON.Texture("/assets/image/textureGL/planet/Jupiter.jpg", scene);
+jupiterMaterial.diffuseTexture = new BABYLON.Texture("assets/image/textureGL/planet/Jupiter.jpg", scene);
 jupiterMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 jupiterMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 jupiterMaterial.alpha = 0.6;
